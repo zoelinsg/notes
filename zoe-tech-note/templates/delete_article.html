@@ -1,0 +1,15 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/delete_article.html -->
+{% extends "base.html" %}
+
+{% block title %}刪除文章{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>刪除文章</h2>
+    <p>你確定要刪除這篇文章嗎？</p>
+    <form method="post" class="form-container">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">刪除</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Zoe-Note{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!-- 引入 Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Zoe技術筆記</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'create-article' %}">新增文章</a></li>
+                    <li>
+                        <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="logout-button">登出</button>
+                        </form>
+                    </li>
+                {% endif %}
+                <li>
+                    <form action="{% url 'search' %}" method="get" class="search-form">
+                        <input type="text" name="keyword" placeholder="搜尋文章..." class="search-input">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i> <!-- 放大鏡圖示 -->
+                        </button>
+                    </form>
+                </li>
+                <li><a href="{% url 'tag-view' tag_name='Python' %}">Python</a></li>
+                <li><a href="{% url 'tag-view' tag_name='C++' %}">C++</a></li>
+                <li><a href="{% url 'tag-view' tag_name='C#' %}">C#</a></li>
+                <li><a href="{% url 'tag-view' tag_name='Java' %}">Java</a></li>
+                <li><a href="{% url 'contact' %}">留言</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-layout">
+        <section class="content">
+            {% block content %}{% endblock %}
+        </section>
+    </main>
+</body>
+</html>

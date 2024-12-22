@@ -1,0 +1,22 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/index.html -->
+{% extends "base.html" %}
+
+{% block title %}Zoe-Note{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h3>文章列表</h3>
+    <ul class="article-list">
+        {% for article in articles %}
+            <li class="article-item">
+                <a href="{% url 'article-detail-view' article.pk %}">{{ article.title }}</a>
+                <div class="tags-container">
+                    {% for tag in article.tags.all %}
+                        <span class="tag">{{ tag.name }}</span>
+                    {% endfor %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

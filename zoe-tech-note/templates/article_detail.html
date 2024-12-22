@@ -1,0 +1,27 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/article_detail.html -->
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ article.title }}</h2>
+    <div class="article-content">
+        {{ article.formatted_markdown|safe }}
+    </div>
+    <p>創建時間: {{ article.created_at|date:"Y年m月d日 H:i" }}</p>
+    <p>更新時間: {{ article.updated_at|date:"Y年m月d日 H:i" }}</p>
+    <div class="tags-container">
+        {% for tag in article.tags.all %}
+            <a href="{% url 'tag-view' tag_name=tag.name %}" class="tag">{{ tag.name }}</a>
+        {% endfor %}
+    </div>
+    {% if user.is_authenticated %}
+        <a href="{% url 'edit-article' article.pk %}" class="btn">編輯</a>
+        <form action="{% url 'delete-article' article.pk %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">刪除</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

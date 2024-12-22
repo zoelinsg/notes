@@ -1,0 +1,26 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/search.html -->
+{% extends "base.html" %}
+
+{% block title %}搜尋結果{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h3>搜尋結果</h3>
+    {% if articles %}
+        <ul class="article-list">
+            {% for article in articles %}
+                <li class="article-item">
+                    <a href="{% url 'article-detail-view' article.pk %}">{{ article.title }}</a>
+                    <div class="tags-container">
+                        {% for tag in article.tags.all %}
+                            <span class="tag">{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>沒有找到相關的文章。</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/contact.html -->
+{% extends 'base.html' %}
+
+{% block title %}留言{% endblock %}
+
+{% block content %}
+<div class="container contact-container">
+    <h2>留言</h2>
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">送出</button>
+    </form>
+</div>
+{% endblock %}

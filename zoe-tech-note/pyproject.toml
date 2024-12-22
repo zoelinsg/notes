@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "zoe-tech-note"
+version = "0.1.0"
+description = ""
+authors = ["zoelinsg <zoelin.sg@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.4"
+markdown = "^3.7"
+django-markdownx = "^4.0.7"
+djangorestframework = "^3.15.2"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

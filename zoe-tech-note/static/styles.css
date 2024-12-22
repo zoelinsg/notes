@@ -1,0 +1,285 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* 更新導覽列樣式 */
+header {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px; /* 減少上下和左右的 padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-start; /* 元素靠左對齊 */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 3px; /* 縮小按鈕間距 */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 3px 6px; /* 減少內部填充 */
+    font-size: 13px; /* 縮小字體大小 */
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* 搜尋欄調整 */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.search-input {
+    padding: 5px; /* 減少上下填充 */
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+    height: 30px; /* 調整高度 */
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0 10px; /* 更緊湊的左右填充 */
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px; /* 保持與輸入框一致的高度 */
+}
+
+.search-button i {
+    font-size: 14px; /* 確保圖示大小合適 */
+    margin: 0; /* 移除右邊距 */
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* 縮小主內容區域 */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* 減少內部填充 */
+    max-width: 900px; /* 減小最大寬度 */
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+.sidebar {
+    width: 250px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+    height: auto;
+}
+
+.content {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #e0e0e0;
+    color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tag:hover {
+    background-color: #d0d0d0;
+    color: #0056b3;
+}
+
+.tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* 縮小左右間距 */
+}
+
+.tag-list li {
+    margin: 0;
+}
+
+.tag-list li a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.tag-list li a:hover {
+    background-color: #d0d0d0;
+    color: #0056b3;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* 新增一些全局樣式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+.article-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.article-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-item a {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.article-item .tags-container {
+    margin-top: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button i {
+    font-size: 14px; /* 確保圖示大小合適 */
+    margin: 0; /* 移除右邊距 */
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}

@@ -1,0 +1,15 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/edit_article.html -->
+{% extends "base.html" %}
+
+{% block title %}編輯文章{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>編輯文章</h2>
+    <form method="post" class="form-container">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">保存</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/contact_limit.html -->
+{% extends 'base.html' %}
+
+{% block title %}留言限制{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>留言限制</h2>
+    <p>您已經提交過留言，請稍後再試。</p>
+    <a href="{% url 'index' %}" class="btn">返回首頁</a>
+</div>
+{% endblock %}

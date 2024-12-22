@@ -1,0 +1,11 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/registration/logged_out.html -->
+{% extends "base.html" %}
+
+{% block title %}登出{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>你已經成功登出</h2>
+    <a href="{% url 'admin-login' %}" class="btn">重新登入</a>
+</div>
+{% endblock %}

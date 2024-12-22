@@ -1,0 +1,15 @@
+<!-- filepath: /c:/Users/zoe.lin/Desktop/zoe-projects/zoe-tech-note/templates/registration/login.html -->
+{% extends "base.html" %}
+
+{% block title %}登入{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>登入</h2>
+    <form method="post" class="form-container">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">登入</button>
+    </form>
+</div>
+{% endblock %}
